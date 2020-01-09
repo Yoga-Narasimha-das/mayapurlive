@@ -9,6 +9,9 @@ image: ../../images/posts/hospital.jpg
 order: 5
 date: 2018-12-06T15:05:09.000Z
 description:
+location:
+  - 23.430058
+  - 88.387780
 tags: []
 ---
 

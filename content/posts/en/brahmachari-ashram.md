@@ -9,7 +9,11 @@ image: ../../images/posts/brahmachari-ashram.jpg
 order: 3
 date: 2018-12-06T15:05:09.000Z
 description:
-tags: []
+location:
+  - 23.426160
+  - 88.390601
+tags:
+  - seva
 ---
 
 There are approximately 300 residential brahmacharis who are all engaged in service in and around ISKCON Mayapur.
