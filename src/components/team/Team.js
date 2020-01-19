@@ -31,7 +31,7 @@ const TeamMember = ({ name, description, facebook, telegram, github, email, avat
     <Box align='center' justify='center' style={{ maxHeight: '150px' }}>
       <Box round='xlarge' height='xsmall' width='xsmall' background={avatar ? { image: `url(${avatar})` } : 'dark-1'} />
       <Box direction='row' gap='xsmall'><Text>{name}</Text><SocialAccounts facebook={facebook} telegram={telegram} github={github} email={email} /></Box>
-      <Box direction='row' gap='xsmall'><Link to='/support-project'>{description}</Link></Box>
+      <Box direction='row' gap='xsmall'><Link to='/about'>{description}</Link></Box>
     </Box>
   )
 }

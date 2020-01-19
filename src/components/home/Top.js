@@ -83,7 +83,7 @@ const Services = () => {
   const textSize = isSmall ? 'small' : 'medium'
   const services = [
     // { id: 'visa', title: { en: 'Get Visa', ru: 'Получить визу' } },
-    { id: 'flights', title: { en: 'Search Flights', ru: 'Найти билеты' } }
+    { id: 'flights', title: { en: 'Visit Mayapur', ru: 'Посетить Маяпур' } }
     // { id: 'rent', title: { en: 'Rent Room', ru: 'Арендовать жилье' } },
     // { id: 'tour', title: { en: 'Book Tour', ru: 'Бронировать тур' } }
   ]

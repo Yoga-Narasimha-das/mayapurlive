@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Anchor, Text, ResponsiveContext } from 'grommet'
+import { Box, Anchor, Text, ResponsiveContext, Button } from 'grommet'
 import { Facebook, Instagram, Mail, Favorite, Github } from 'grommet-icons'
 
 import Link from './Link'
@@ -39,7 +39,9 @@ const Footer = () => {
         <Text size={size}>Mayapur Live © 2019-2020</Text>
       </Box>
       <Box fill='horizontal' align='center' justify='between' direction='row' gap='xsmall'>
-        <Text size={size}><Favorite size='small' color='red' /> <Link to='/team'>{intl.footer_project_team[locale]}</Link></Text>
+        <Text size={size}><Link to='/team'>{intl.footer_project_team[locale]}</Link></Text>
+        {/* <Text size={size}><Favorite size='small' color='red' /> <Link to='/donations'>{intl.footer_donate[locale]}</Link></Text> */}
+        <Button primary icon={<Favorite size='small' />} href={`/${locale}/donations`} label={intl.footer_donate[locale]} color='status-error'/>
         <Text size={size}>{intl.footer_developed_by[locale]} <Anchor href='https://108.systems' rel='noopener' target='_blank'>108.systems</Anchor></Text>
       </Box>
     </Box>

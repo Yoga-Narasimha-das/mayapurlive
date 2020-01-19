@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import SupportProject from '../components/support-project/SupportProject'
+import SupportProject from '../components/about/About'
 import PageSEO from '../components/seo'
 
 import intl from '../intl'
