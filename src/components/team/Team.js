@@ -13,7 +13,7 @@ import radha from './radha.jpg'
 import taisiya from './taisiya.jpg'
 import alena from './alena.jpg'
 import vraja from './vraja-palini.jpg'
-import defaultAvatar from './default.jpg'
+import defaultAvatar from '../../../content/images/jagannath.jpg'
 
 const SocialAccounts = ({ facebook, telegram, github, email }) => {
   return (

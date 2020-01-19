@@ -9,7 +9,7 @@ import intl from '../../intl'
 
 import { useLocale } from '../../lib'
 
-import avatar from '../Team/default.jpg'
+import avatar from '../../../content/images/jagannath.jpg'
 
 const SocialAccounts = ({ facebook, telegram, github, email }) => {
   return (
