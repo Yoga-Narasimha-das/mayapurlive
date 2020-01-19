@@ -5,7 +5,7 @@ status: 'to do'
 templateKey: post
 locale: ru
 title: Слуги Общины Маяпура (MCS)
-image: ../../images/posts/mcs.jpg
+image: ../../images/posts/mayapur-community-sevakas.jpg
 order: 2
 date: 2018-12-06T15:05:09.000Z
 description:
