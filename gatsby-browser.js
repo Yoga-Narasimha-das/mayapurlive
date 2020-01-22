@@ -1,3 +1,5 @@
+export { wrapRootElement, wrapPageElement } from './gatsby-utils'
+
 /* global window, document */
 const scrollTo = (id) => () => {
   const el = document.getElementById(id)

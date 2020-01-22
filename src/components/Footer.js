@@ -38,10 +38,12 @@ const Footer = () => {
       <Box fill='horizontal' direction='row' gap='xsmall' align='center' justify='center'>
         <Text size={size}>Mayapur Live © 2019-2020</Text>
       </Box>
-      <Box fill='horizontal' align='center' justify='between' direction='row' gap='xsmall'>
+      <Box fill='horizontal' align='center' justify='between' direction='row' gap='small'>
         <Text size={size}><Link to='/team'>{intl.footer_project_team[locale]}</Link></Text>
-        {/* <Text size={size}><Favorite size='small' color='red' /> <Link to='/donations'>{intl.footer_donate[locale]}</Link></Text> */}
-        <Button primary icon={<Favorite size='small' />} href={`/${locale}/donations`} label={intl.footer_donate[locale]} color='status-error'/>
+        {/* <Text size={size}><Favorite size='small' color='status-error' /> <Link to='/donations'>{intl.footer_donate[locale]}</Link></Text> */}
+        {/* <Text size={size}><Link to='/donations'>{intl.footer_donate[locale]}</Link></Text> */}
+        {/* <Button primary icon={<Favorite size='small' />} href={`/${locale}/donations`} label={intl.footer_donate[locale]} color='status-error'/> */}
+        <Button primary icon={<Box animation='pulse'><Favorite size='small' /></Box>} href={`/${locale}/donations`} color='status-error'/>
         <Text size={size}>{intl.footer_developed_by[locale]} <Anchor href='https://108.systems' rel='noopener' target='_blank'>108.systems</Anchor></Text>
       </Box>
     </Box>
