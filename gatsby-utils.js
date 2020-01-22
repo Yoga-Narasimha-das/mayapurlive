@@ -53,7 +53,7 @@ const Wrapper = ({ children }) => {
   const locale = useLocale()
   const facebookAppId = '610493882762259' // FIXME: remove hardcode
   return (
-    <FacebookProvider wait appId={facebookAppId} language={`${locale}_${locale.toUpperCase()}`}>
+    <FacebookProvider chatSupport wait appId={facebookAppId} language={`${locale}_${locale.toUpperCase()}`}>
       {children}
     </FacebookProvider>
   )
