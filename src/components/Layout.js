@@ -3,7 +3,7 @@ import { Box } from 'grommet'
 
 import Footer from './Footer'
 import Header from './Header'
-import Chat from './Chat'
+// import Chat from './Chat'
 
 export default ({ children, showFooter = true, showChat = true }) => {
   return (
@@ -13,7 +13,7 @@ export default ({ children, showFooter = true, showChat = true }) => {
         {children}
       </Box>
       {showFooter && <Footer />}
-      {showChat && <Chat />}
+      {/* {showChat && <Chat />} */}
     </Box>
   )
 }

@@ -8,6 +8,7 @@ import { deepMerge } from 'grommet/utils'
 
 // import { StateProvider, store } from './src/lib/store'
 import { useLocale } from './src/lib'
+import Chat from './src/components/Chat'
 
 const GlobalStyle = createGlobalStyle`
   img {
@@ -72,6 +73,7 @@ export const wrapPageElement = ({ element }) => {
     <Grommet full theme={customTheme}>
       <GlobalStyle />
       {element}
+      <Chat />
     </Grommet>
   )
 }

@@ -5,7 +5,7 @@ status: 'in progress'
 templateKey: post
 locale: en
 title: Prithu Kunda(Ballal-dighi)
-image:
+image: ../../images/posts/prithu-kunda.jpg
 order: 6
 date: 2018-12-07T15:04:10.000Z
 description: Although no longer visible, Prithu-kunda was a very beautiful lake

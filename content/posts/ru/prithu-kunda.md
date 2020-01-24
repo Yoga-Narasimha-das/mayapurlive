@@ -5,7 +5,7 @@ status: 'in progress'
 templateKey: post
 locale: ru
 title: Притху Кунда(Баллал-дигхи)
-image:
+image: ../../images/posts/prithu-kunda.jpg
 order: 6
 date: 2018-12-07T15:04:10.000Z
 description: Сейчас уже не существующая, Притху кунда была прекрасным озером
