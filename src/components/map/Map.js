@@ -29,10 +29,12 @@ const Filters = ({ categories, category }) => {
 export default ({ posts, categories }) => {
   const screen = React.useContext(ResponsiveContext)
   const { location } = useLocation()
+  const locale = useLocale()
   const queryParams = new URLSearchParams(location.search)
   const isSmall = screen === 'small'
   const allPlaces = posts.filter(post => post.location)
-  const categoryTitle = queryParams.get('category')
+  const defaultCategoryByLang = { en: 'ISKCON Mayapur', ru: 'ИСККОН Маяпур' }
+  const categoryTitle = queryParams.get('category') || defaultCategoryByLang[locale]
   const places = categoryTitle ? allPlaces.filter(place => place.category.title === categoryTitle) : allPlaces
   return (
     <Box flex>

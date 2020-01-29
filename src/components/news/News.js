@@ -47,6 +47,7 @@ const News = () => {
   const screen = React.useContext(ResponsiveContext)
   const isSmall = screen === 'small'
   const locale = useLocale()
+  const pageByLang = { ru: 'sri.dham.mayapur', en: 'mayapur.live' }
   return (
     <Box fill flex>
       <Tabs flex>
@@ -56,7 +57,7 @@ const News = () => {
               {({ size }) => {
                 console.log('size', size.width, size.height)
                 return (
-                  <FacebookPage page='sri.dham.mayapur' size={size} align='center' />
+                  <FacebookPage page={pageByLang[locale]} size={size} align='center' />
                 )
               }}
             </SizeMe>
