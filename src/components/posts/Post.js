@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Heading, Layer, ResponsiveContext, Button, Stack, Text } from 'grommet'
-import { Previous, LinkPrevious, Camera } from 'grommet-icons'
+import { Previous, LinkPrevious, Camera, Facebook } from 'grommet-icons'
+import { Share } from 'react-facebook'
 import { renderAst } from '../../lib'
 import Tags from './Tags'
 import Image from '../Image'
@@ -26,6 +27,11 @@ export default ({ post }) => {
         <Box fill='horizontal' direction='row' align='center' justify='center' gap='small'>
           <Link to={post.category.path}><Box fill align='center' justify='center'><Previous color='control' /></Box></Link>
           <Heading level={2}>{post.title}</Heading>
+          <Share href={`https://mayapur.live${post.path}`}>
+            {({ handleClick, loading }) => (
+              <Button disabled={loading} icon={<Facebook color='control' />} onClick={handleClick} />
+            )}
+          </Share>
         </Box>
         <Tags tags={post.tags.map(tag => ({ value: tag, path: `/tags/${tag}` }))} />
       </Box>

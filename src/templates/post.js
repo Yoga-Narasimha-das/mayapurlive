@@ -4,8 +4,8 @@ import Post from '../components/posts/Post'
 import Layout from '../components/Layout'
 import PageSEO from '../components/seo'
 
-const PostPage = ({ pageContext: { locale }, data: { markdownRemark } }) => {
-  const post = { htmlAst: markdownRemark.htmlAst, ...markdownRemark.frontmatter, category: { path: markdownRemark.frontmatter.category.frontmatter.category_id } }
+const PostPage = ({ pageContext: { locale, slug }, data: { markdownRemark } }) => {
+  const post = { htmlAst: markdownRemark.htmlAst, ...markdownRemark.frontmatter, path: slug, category: { path: markdownRemark.frontmatter.category.frontmatter.category_id } }
   const ogImagePath = post.image && post.image.childImageSharp.fixed.src
   return (
     <Layout>

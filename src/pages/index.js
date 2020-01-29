@@ -27,7 +27,7 @@ export const pageQuery = graphql`
   query IndexPageQuery($locale: String = "en") {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
-      filter: { frontmatter: { templateKey: { eq: "category" }, locale: { eq: $locale } } }
+      filter: { frontmatter: { templateKey: { eq: "category" }, hide_on_main: { ne: true }, locale: { eq: $locale } } }
     ) {
       edges {
         node {
@@ -37,6 +37,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            hide_on_main
             templateKey
             image {
               childImageSharp {

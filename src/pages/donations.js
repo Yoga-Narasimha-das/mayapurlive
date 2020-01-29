@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout'
 import Donations from '../components/donations/Donations'
@@ -13,6 +14,9 @@ const TeamPage = ({ pageContext: { locale = intl.defaultLocale }, data }) => {
   return (
     <Layout title={title}>
       <PageSEO title={intl.footer_donate[locale]} lang={locale} />
+      <Helmet>
+        <script src='https://gumroad.com/js/gumroad.js' />
+      </Helmet>
       <Donations />
     </Layout>
   )

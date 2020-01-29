@@ -51,6 +51,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            location
             tags
             image {
               childImageSharp {

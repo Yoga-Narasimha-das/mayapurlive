@@ -3,8 +3,6 @@ import { Box, Text, Grid, Button, Heading, Paragraph } from 'grommet'
 import { Facebook, Send, Mail, Github } from 'grommet-icons'
 import Link from '../Link'
 
-import  { Helmet } from 'react-helmet'
-
 import intl from '../../intl'
 
 import { useLocale } from '../../lib'
@@ -59,9 +57,6 @@ export default ({ team }) => {
   }
   return (
     <Box fill pad='small' align='center'>
-      <Helmet>
-        <script src='https://gumroad.com/js/gumroad.js' />
-      </Helmet>
       <Heading level={2}>{intl.donations_support_mayapur_live[locale]}</Heading>
       <Box width={{ max: 'large' }}><Paragraph fill>{intl.donations_description[locale]}</Paragraph></Box>
       <Box direction='row' gap='small'>

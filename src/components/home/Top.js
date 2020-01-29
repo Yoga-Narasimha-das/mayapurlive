@@ -93,7 +93,8 @@ const Services = () => {
         {services.map(service => (
           <Box align='center' justify='center' key={service.title[locale]} basis='full' fill>
             <Box round background={{ color: 'black', opacity: 'strong' }} width='small' height='xxsmall' align='center' justify='center'>
-              <Button onClick={() => setOpen(service.id)} fill plain label={<Box fill align='center' justify='center'><Text textAlign='center' size={textSize} color='light-1' weight='bold'>{service.title[locale]}</Text></Box>} />
+              {/* <Button onClick={() => setOpen(service.id)} fill plain label={<Box fill align='center' justify='center'><Text textAlign='center' size={textSize} color='light-1' weight='bold'>{service.title[locale]}</Text></Box>} /> */}
+              <Button href={`/${locale}/visit-mayapur`} fill plain label={<Box fill align='center' justify='center'><Text textAlign='center' size={textSize} color='light-1' weight='bold'>{service.title[locale]}</Text></Box>} />
             </Box>
           </Box>
         ))}
