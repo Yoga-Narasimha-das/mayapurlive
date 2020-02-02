@@ -18,7 +18,7 @@ tags:
   - prabhupada
 ---
 
-The first building in ISKCON Mayapur, where Srila Prabhupada lived with his students, is a thatched-roof hut that has been preserved almost intact. Now here, to satisfy Srila Prabhupada, a 24-hour kirtan is being held.
+The first building in ISKCON Mayapur, where [Srila Prabhupada](/en/srila-prabhupada) lived with his disciples, is a thatched-roof hut that has been preserved almost intact. Now here, to satisfy Srila Prabhupada, a 24-hour kirtan is being held.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GpRvINDyGQc?start=208" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

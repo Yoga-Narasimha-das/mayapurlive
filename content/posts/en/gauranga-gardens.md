@@ -17,4 +17,22 @@ tags:
   - restaurant
 ---
 
+**Features:**
+- Large air-conditioned room, summer terrace.
+- Large portions, varied menu.
+- The waiters speak English.
+
+**Cuisine:** Indian, Italian, Chinese
+
+**Working hours:** **10:00 - closing time to be confirmed**
+
+From menu:
+- **Thali** - 80 rupees
+- **Dosa** (big pancake) - 40 rupees
+- **Pasta** - 60 rupees
+- **Chowming** - 60 rupees
+- **Crispy corn** - 80 rupees
+
+Located in Gournagar
+
 <tbd locale="en" url="mailto:haribol@mayapur.live"></tbd>
