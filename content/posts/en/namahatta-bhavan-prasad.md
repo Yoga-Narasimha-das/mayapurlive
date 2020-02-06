@@ -17,4 +17,20 @@ tags:
   - prasad
 ---
 
+**Features:**
+ - Large prasadam hall with the possibility of serving up to several thousand people.
+ - Large portions with free addition.
+
+**Cuisine:** Indian
+
+**Working hours:** **13:00 - 15:00**
+
+Price 40 rupees, coupon must be purchased in advance at the counter near [Srila Prabhupada's Bhajan-kutir](/en/bhajan-kutir).
+
+Menu:
+  - **Rice**
+  - **Dal**
+  - **Several sabji**
+  - **Sweet rice**
+
 <tbd locale="en" url="mailto:haribol@mayapur.live"></tbd>
