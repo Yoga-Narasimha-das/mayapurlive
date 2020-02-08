@@ -43,9 +43,25 @@ const Marker = ({ left, top, latLngToPixel, onClick, payload, icon, active = fal
   </Box>
 )
 
-const MyMap = ({ results = [], active = null, handleClick, handleBoundsChanged, center, zoom, handleReset, overlayOffset = [150, 200], geolocation }) => {
+const providers = {
+  osm: (x, y, z) => {
+    const s = String.fromCharCode(97 + (x + y + z) % 3)
+    return `https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png`
+  },
+  wikimedia: (x, y, z, dpr) => {
+    return `https://maps.wikimedia.org/osm-intl/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.png`
+  },
+  stamen: (x, y, z, dpr) => {
+    return `https://stamen-tiles.a.ssl.fastly.net/terrain/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.jpg`
+  },
+  maptiler: (x, y, z, dpr) => {
+    return `https://api.maptiler.com/maps/streets/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.png?key=fIrApJZn9Z8c461yustJ`
+  }
+}
+
+const MyMap = ({ results = [], active = null, handleClick, handleBoundsChanged, center, zoom, handleReset, overlayOffset = [150, 200], geolocation, provider = 'osm' }) => {
   return (
-    <Map center={center} zoom={zoom} onBoundsChanged={handleBoundsChanged}>
+    <Map center={center} zoom={zoom} onBoundsChanged={handleBoundsChanged} provider={providers[provider]}>
       <Box style={{ height: '100%', width: '100%', position: 'absolute', left: 0, top: 0 }} onClick={() => handleReset()} />
       {results.filter(result => result.location).map(result => (
         <Marker
