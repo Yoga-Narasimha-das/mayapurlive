@@ -6,7 +6,7 @@ templateKey: post
 locale: en
 title: Brahmachari Ashram
 image: ../../images/posts/brahmachari-ashram.jpg
-order: 3
+order: 4
 date: 2018-12-06T15:05:09.000Z
 description:
 location:
