@@ -1,10 +1,30 @@
 import React from 'react'
-import { Box, ResponsiveContext, Tabs, Tab } from 'grommet'
+import { Box, ResponsiveContext, Tabs, Tab, Select } from 'grommet'
 
 import { SizeMe } from 'react-sizeme'
 import { Page, EmbeddedPost } from 'react-facebook'
 
-import { useLocale } from '../../lib'
+import { useLocation, useLocale } from '../../lib'
+
+import intl from '../../intl'
+
+const Filters = ({ pages, page, isSmall }) => {
+  const locale = useLocale()
+  const { location, navigate } = useLocation()
+  return (
+    <Box fill='horizontal' align='center' justify='center' direction='row'>
+      <Box pad='small' fill={isSmall ? 'horizontal' : null}>
+        <Select
+          placeholder={intl.map_select_category[locale]}
+          plain={false}
+          options={pages.map(p => p.title[locale])}
+          value={page}
+          onChange={({ option }) => navigate(`${location.pathname}?page=${option.replace(' ', '+')}`)}
+        />
+      </Box>
+    </Box>
+  )
+}
 
 const FacebookPagePlugin = ({ width, height, page }) => (
   <Page
@@ -43,30 +63,36 @@ const NewsGrid = ({ isSmall }) => {
   )
 }
 
+const pages = [
+  { title: { en: 'Information Department', ru: 'Отдел Информации' }, slug: { en: 'mayapur.live', ru: 'sri.dham.mayapur' } },
+  { title: { en: 'Vedic Planetarium', ru: 'Ведический Планетарий' }, slug: { en: 'tovp.mayapur', ru: 'tovp.mayapur' } },
+  { title: { en: 'Zero Waste', ru: 'Ноль Отходов' }, slug: { en: 'ZeroWasteMayapur', ru: 'ZeroWasteMayapur' } },
+  { title: { en: 'Goshala', ru: 'Гошала' }, slug: { en: 'Srimayapurgoshalaoffical', ru: 'Srimayapurgoshalaoffical' } },
+  { title: { en: 'Bhaktivedanta Academy', ru: 'Академия Бхактиведанты' }, slug: { en: 'ba.mayapur', ru: 'ba.mayapur' } }
+]
+
 const News = () => {
   const screen = React.useContext(ResponsiveContext)
-  const isSmall = screen === 'small'
+  const { location } = useLocation()
   const locale = useLocale()
-  const pageByLang = { ru: 'sri.dham.mayapur', en: 'mayapur.live' }
+  const queryParams = new URLSearchParams(location.search)
+  const isSmall = screen === 'small'
+  const defaultPageByLang = pages[0]
+  const pageTitle = queryParams.get('page') || defaultPageByLang[locale]
+  console.log('page title', pageTitle)
+  const page = pageTitle ? pages.filter(p => p.title[locale] === pageTitle)[0] : defaultPageByLang
   return (
     <Box fill flex>
-      <Tabs flex>
-        <Tab title={locale === 'en' ? 'Feed' : 'Лента'}>
-          <Box fill flex>
-            <SizeMe monitorHeight>
-              {({ size }) => {
-                console.log('size', size.width, size.height)
-                return (
-                  <FacebookPage page={pageByLang[locale]} size={size} align='center' />
-                )
-              }}
-            </SizeMe>
-          </Box>
-        </Tab>
-        <Tab title={locale === 'en' ? 'Pinned' : 'Закрепленные'}>
-          <NewsGrid isSmall={isSmall} />
-        </Tab>
-      </Tabs>
+      <Filters isSmall={isSmall} pages={pages} page={page.title[locale]} />
+      <Box fill flex>
+        <SizeMe monitorHeight>
+          {({ size }) => {
+            return (
+              <FacebookPage page={page.slug[locale]} size={size} align='center' />
+            )
+          }}
+        </SizeMe>
+      </Box>
     </Box>
   )
 }

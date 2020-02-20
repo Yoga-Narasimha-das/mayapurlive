@@ -8,15 +8,15 @@ import { useLocation, useLocale } from '../../lib'
 
 import intl from '../../intl'
 
-const Filters = ({ categories, category }) => {
+const Filters = ({ categories, category, isSmall }) => {
   const locale = useLocale()
   const { location, navigate } = useLocation()
   return (
     <Box fill='horizontal' align='center' justify='center' direction='row'>
-      <Box>
+      <Box pad='small' fill={isSmall ? 'horizontal' : null}>
         <Select
           placeholder={intl.map_select_category[locale]}
-          plain
+          plain={false}
           options={categories.map(category => category.title)}
           value={category}
           onChange={({ option }) => navigate(`${location.pathname}?category=${option.replace(' ', '+')}`)}
@@ -38,7 +38,7 @@ export default ({ posts, categories }) => {
   const places = categoryTitle ? allPlaces.filter(place => place.category.title === categoryTitle) : allPlaces
   return (
     <Box flex>
-      <Filters categories={categories} category={categoryTitle} />
+      <Filters isSmall={isSmall} categories={categories} category={categoryTitle} />
       <Box flex direction='row'>
         {!isSmall && <Box overflow='scroll' height={{ max: '100vh' }} pad={{ top: 'xsmall' }}><Posts posts={places} /></Box>}
         <Box flex background='brand'><Map places={places} /></Box>
