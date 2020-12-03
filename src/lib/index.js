@@ -4,6 +4,7 @@ import renderAst from './renderAst'
 
 import intl from '../intl'
 
+import { usePageContext } from './PageContext'
 import browserLang from 'browser-lang'
 
 const useIntlRedirect = (currentLocale, languages, fallback) => {
@@ -35,10 +36,13 @@ const useLocation = () => {
 }
 
 const useLocale = () => {
-  const { location } = useLocation()
-  const localeFromPath = location.pathname.split('/').filter(part => intl.locales.includes(part))[0]
-  const locale = localeFromPath || intl.defaultLocale
-  return locale
+  // const { location } = useLocation()
+  // const localeFromPath = location.pathname.split('/').filter(part => intl.locales.includes(part))[0]
+  // const locale = localeFromPath || intl.defaultLocale
+  // return locale
+
+  const { locale } = usePageContext()
+  return locale || intl.defaultLocale
 }
 
 export { renderAst, useLocale, useLocation, useIntlRedirect }

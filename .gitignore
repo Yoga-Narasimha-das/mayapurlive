@@ -65,3 +65,5 @@ bundle-stats.json
 
 # Env files
 .env*
+
+.vercel
