@@ -8,6 +8,8 @@ import { deepMerge } from 'grommet/utils'
 
 // import { StateProvider, store } from './src/lib/store'
 import { useLocale } from './src/lib'
+import { PageContextProvider } from './src/lib/PageContext'
+
 import Chat from './src/components/Chat'
 
 const GlobalStyle = createGlobalStyle`
@@ -68,11 +70,13 @@ export const wrapRootElement = ({ element }) => {
   )
 }
 
-export const wrapPageElement = ({ element }) => {
+export const wrapPageElement = ({ element, props }) => {
   return (
     <Grommet full theme={customTheme}>
       <GlobalStyle />
-      {element}
+      <PageContextProvider pageContext={props.pageContext}>
+        {element}
+      </PageContextProvider>
       <Chat />
     </Grommet>
   )
