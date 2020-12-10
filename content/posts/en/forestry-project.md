@@ -1,15 +1,17 @@
 ---
 category: /en/community/
-published: true
-status: 'to do'
-templateKey: post
-locale: en
 title: Forestry Project
-image: ../../images/posts/forestry-project.jpg
-order: 10
-date: 2018-12-06T15:05:09.000Z
-description:
+description: А project of ISKCON Mayapuг's Land Department is the Mayapur
+  Forestry Project, which helps promote, conserve and develop the environment of
+  Srl Mayapur Dhama.
 tags: []
+image: ../../images/posts/forestry-project.jpg
+published: true
+status: in progress
+order: 10
+templateKey: post
+date: 2018-12-06T15:05:09.000Z
+locale: en
 ---
 
 А project of ISKCON Mayapuг's Land Department is the Mayapur Forestry Project, which helps promote, conserve and develop the environment of Srl Mayapur Dhama.
