@@ -1,0 +1,100 @@
+media_folder: content/images
+public_folder: /images/uploads
+collections:
+  - name: categories_en
+    label: Categories
+    folder: content/categories/en
+    media_folder: ../../images/categories
+    public_folder: ../../images/categories
+    preview_path: en/{{slug}}
+    create: true
+    sortable_fields: ["order", "title"]
+    fields:
+    - {label: Title, name: title, widget: string}
+    - {label: Image, name: image, widget: image, required: false}
+    - {label: Body, name: body, widget: markdown, required: false}
+    - {label: Order, name: order, widget: number, value_type: int, min: 1}
+    - {label: Category ID, name: category_id, widget: string, required: false}
+    - {label: Template, name: templateKey, widget: hidden, default: category}
+    - {label: Locale, name: locale, widget: hidden, default: en}
+
+  
+  - name: posts_en
+    label: Posts
+    folder: content/posts/en
+    media_folder: ../../images/posts
+    public_folder: ../../images/posts
+    create: true
+    sortable_fields: ["order", "title"]
+    view_groups:
+      - {label: Category, field: category}
+      - {label: Status, field: status}
+    fields:
+    - {label: Category, name: category, widget: relation, collection: categories_en, search_fields: ["title"], value_field: category_id, display_fields: ["title"]}
+    - {label: Title, name: title, widget: string}
+    - {label: Description, name: description, widget: text}
+    - {label: Tags, name: tags, widget: list}
+    - {label: Image, name: image, widget: image}
+    - label: Gallery
+      name: gallery
+      widget: list
+      required: false
+      summary: '{{fields.image}}'
+      label_singular: image
+      field: {label: Image, name: image, widget: image}
+    - {label: Body, name: body, widget: markdown}
+    - {label: Location, name: location, widget: list, required: false}
+    - {label: Published, name: published, widget: boolean, default: false}
+    - {label: Status, name: status, widget: select, options: ["to do", "in progress", "done"], default: 'to do'}
+    - {label: Order, name: order, widget: number, value_type: int, min: 1}
+    - {label: Template, name: templateKey, widget: hidden, default: post}
+    - {label: Locale, name: locale, widget: hidden, default: en}
+
+
+  - name: categories_ru
+    label: Категории
+    folder: content/categories/ru
+    media_folder: ../../images/categories
+    public_folder: ../../images/categories
+    create: true
+    sortable_fields: ["order", "title"]
+    fields:
+    - {label: Title, name: title, widget: string}
+    - {label: Image, name: image, widget: image}
+    - {label: Body, name: body, widget: markdown}
+    - {label: Order, name: order, widget: number, value_type: int, min: 1}
+    - {label: Category ID, name: category_id, widget: string}
+    - {label: Template, name: templateKey, widget: hidden, default: category}
+    - {label: Locale, name: locale, widget: hidden, default: ru}
+
+
+  - name: posts_ru
+    label: Посты
+    folder: content/posts/ru
+    media_folder: ../../images/posts
+    public_folder: ../../images/posts
+    create: true
+    sortable_fields: ["order", "title"]
+    view_groups:
+      - {label: Category, field: category}
+      - {label: Status, field: status}
+    fields:
+    - {label: Category, name: category, widget: relation, collection: categories_ru, search_fields: ["title"], value_field: category_id, display_fields: ["title"]}
+    - {label: Title, name: title, widget: string}
+    - {label: Description, name: description, widget: text}
+    - {label: Tags, name: tags, widget: list}
+    - {label: Image, name: image, widget: image}
+    - label: Gallery
+      name: gallery
+      widget: list
+      required: false
+      summary: '{{fields.image}}'
+      label_singular: image
+      field: {label: Image, name: image, widget: image}
+    - {label: Body, name: body, widget: markdown}
+    - {label: Location, name: location, widget: list, required: false}
+    - {label: Published, name: published, widget: boolean, default: false}
+    - {label: Status, name: status, widget: select, options: ["to do", "in progress", "done"], default: 'to do'}
+    - {label: Order, name: order, widget: number, value_type: int, min: 1}
+    - {label: Template, name: templateKey, widget: hidden, default: post}
+    - {label: Locale, name: locale, widget: hidden, default: ru}

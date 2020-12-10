@@ -1,6 +1,6 @@
 require('dotenv').config({
   // path: `.env.${process.env.NODE_ENV}`
-  path: '.env.build'
+  path: '.env'
 })
 
 module.exports = {
@@ -122,6 +122,14 @@ module.exports = {
         theme_color: '#000000',
         display: 'standalone',
         icon: 'content/images/icon.jpg'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        manualInit: true,
+        enableIdentityWidget: false
       }
     },
     'gatsby-plugin-offline',
